@@ -1,28 +1,119 @@
 .form {
-    width: 100%;
-    z-index: 10;
+	width: 100%;
+	z-index: 10;
 
-    .search {
+	.search {
+		display: flex;
+		justify-content: center;
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        .input {
+		.input {
+			border-radius: 10px;
+			outline: transparent;
+			border-radius: 3px;
+			border: 1px solid #fff;
+			width: 15rem;
+			margin-top: 0.4rem;
 
-            margin-top: .8rem;
-            border-radius: 3px;
-            outline: transparent;
-            border-radius: 3px;
-            border: 1px solid #fff;
+			&:focus {
+				border: 1px solid #fff;
+				outline: transparent;
+			}
+		}
+	}
+}
 
-            &:focus {
-                border: 1px solid orangered;
-                outline: transparent;
-            }
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
 
-        }
-    }
+	a {
+		text-decoration: none;
+		color: white;
+		margin: 0;
+		padding: 0;
+	}
 
-    
+	li {
+		display: flex;
+		border-top: 0.2rem solid #111314;
+		border-right: 0.2rem solid #111314;
+		border-left: 0.2rem solid #111314;
+		padding: 0.8rem;
+		background-color: #0b0e0f;
 
+		&:hover {
+			background-color: #262829;
+		}
+
+		img {
+			width: 4rem;
+			height: 100%;
+		}
+
+		.info {
+			display: flex;
+			flex-direction: column;
+			padding-left: 2rem;
+
+			.hero {
+				font-size: 0.8rem;
+				font-weight: bold;
+			}
+		}
+	}
+}
+
+/*
+ * Author: http://stuffandnonsense.co.uk/blog/about/hardboiled_css3_media_queries/
+ */
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+	/* Styles */
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: 321px) {
+	/* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 320px) {
+	/* Styles */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+	/* Styles */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+	/* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+	/* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1224px) {
+	/* Styles */
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width: 1824px) {
+	/* Styles */
+}
+
+/* iPhone 4 ----------- */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+	only screen and (min-device-pixel-ratio: 1.5) {
+	/* Styles */
 }
