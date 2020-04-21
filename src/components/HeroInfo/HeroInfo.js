@@ -31,7 +31,7 @@ export default function HeroInfo() {
 							<div>
 								<h1>{hero?.name}</h1>
 								<h3>
-									Aliases: {`"${hero?.biography.aliases}"`}
+									Aliases: {`"${hero?.biography.aliases.join(',  ')} " `}
 								</h3>
 								<div>
 									<h3>

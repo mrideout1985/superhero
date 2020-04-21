@@ -24,26 +24,35 @@
 		}
 
 		.header {
-			margin: auto;
+			margin: 1rem;
 			padding: 1rem;
 			width: 100rem;
-			background: transparent;
 			height: 450px;
 			position: relative;
+			border: 1px solid white;
 			z-index: 1;
 			display: flex;
 			align-items: center;
+			justify-content: space-between;
 
 			img {
 				height: 20rem;
+				margin-right: .3rem;
 				width: auto;
 				border-radius: 1rem;
 			}
 
 			.details {
-				padding: 1rem;
-				display: flex;
-				justify-content: flex-start;
+				height: 20rem;
+				margin-left: .3rem;
+
+				width: auto;
+				border: 1px solid white;
+				border-radius: 1rem;
+				z-index: 10;
+				display: block;
+				font-weight: lighter;
+				text-align: left;
 			}
 		}
 	}
