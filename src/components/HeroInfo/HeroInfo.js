@@ -1,59 +1,117 @@
-import React from "react";
-// import useHeros from "../../hooks/useHeros"
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import useHero from "../../hooks/useHero";
 import styles from "./HeroInfo.module.scss";
+import PowerStats from "./PowerStats";
+import Biography from "./Biography";
+import Appearance from "./Appearance";
+import Connections from "./Connections";
 
 export default function HeroInfo() {
 	let { id } = useParams();
 	const hero = useHero(id);
 
+	const [statsActive, setStatsActive] = useState(false);
+	const [bioActive, setBioActive] = useState(false);
+	const [appearActive, setAppearActive] = useState(false);
+	const [connectionsActive, setConnectionsActive] = useState(false);
+
 	return (
 		<div className={styles["hero-page"]}>
-			<div
-				className={styles["header-container"]}
-				style={{
-					backgroundImage: `url(${hero?.image?.url})`,
-					backgroundSize: "cover",
-				}}
-			>
+			<div className={styles["header-container"]}>
 				<div className={styles["header"]}>
-					<img
-						src={
-							hero?.image?.url !== undefined
-								? hero?.image?.url
-								: "no img"
-						}
-						alt=""
-					/>
+					<div>
+						<img
+							src={
+								hero?.image?.url !== undefined
+									? hero?.image?.url
+									: "no img"
+							}
+							alt=""
+						/>
+					</div>
+					<div>
+						<div
+							className={styles["tab"]}
+							onClick={() => {
+								setBioActive(true);
+								setStatsActive(false);
+								setConnectionsActive(false);
+
+								setAppearActive(false);
+							}}
+						>
+							BIO
+						</div>
+						<div
+							className={styles["tab"]}
+							onClick={() => {
+								setStatsActive(true);
+								setBioActive(false);
+								setAppearActive(false);
+								setConnectionsActive(false);
+							}}
+						>
+							POWER
+						</div>
+						<div
+							className={styles["tab"]}
+							onClick={() => {
+								setAppearActive(true);
+								setStatsActive(false);
+								setBioActive(false);
+								setConnectionsActive(false);
+							}}
+						>
+							APPEARANCE
+						</div>
+						<div
+							className={styles["tab"]}
+							onClick={() => {
+								setConnectionsActive(true);
+								setAppearActive(false);
+								setStatsActive(false);
+								setBioActive(false);
+							}}
+						>
+							CONNECTIONS
+						</div>
+					</div>
 					<div className={styles["details"]}>
-						<ul>
-							<div>
-								<h1>{hero?.name}</h1>
-								<h3>
-									Aliases: {`"${hero?.biography.aliases.join(',  ')} " `}
-								</h3>
-								<div>
-									<h3>
-										Publisher: {hero?.biography?.publisher}
-									</h3>
-									<div className={styles["overview"]}>
-										asdfasdf
-									</div>
-								</div>
-							</div>
-						</ul>
+						<PowerStats
+							className={
+								statsActive
+									? styles["visible"]
+									: styles["hidden"]
+							}
+							powerStats={hero?.powerstats}
+						/>
+						<Biography
+							className={
+								bioActive ? styles["visible"] : styles["hidden"]
+							}
+							biography={hero?.biography}
+						/>
+
+						<Appearance
+							className={
+								appearActive
+									? styles["visible"]
+									: styles["hidden"]
+							}
+							appearance={hero?.appearance}
+						/>
+						<Connections
+							className={
+								connectionsActive
+									? styles["visible"]
+									: styles["hidden"]
+							}
+							connections={hero?.connections}
+						/>
 					</div>
 				</div>
-				//{" "}
-				{/* <h2>{`Int: ${hero?.powerstats?.intelligence}`}</h2>
-		//     <h2>{`Str: ${hero?.powerstats?.strength}`}</h2>
-		//     <h2>{`Spd: ${hero?.powerstats?.speed}`}</h2>
-		//     <h2>{`Dur: ${hero?.powerstats?.durability}`}</h2>
-		//     <h2>{`Pow: ${hero?.powerstats?.power}`}</h2> */}
-				//{" "}
 			</div>
-			//{" "}
 		</div>
 	);
 }

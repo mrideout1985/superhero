@@ -1,11 +1,11 @@
 .hero-page {
 	height: 100vh;
 	background: white;
-	color: white;
+	color: black;
 	padding: 0;
 
 	.header-container {
-		height: 550px;
+		height: 40rem;
 		display: flex;
 		position: relative;
 		padding: 0;
@@ -27,25 +27,24 @@
 			margin: 1rem;
 			padding: 1rem;
 			width: 100rem;
-			height: 450px;
+			height: 30rem;
 			position: relative;
 			border: 1px solid white;
 			z-index: 1;
 			display: flex;
+			justify-content: center;
 			align-items: center;
-			justify-content: space-between;
 
 			img {
 				height: 20rem;
-				margin-right: .3rem;
+				margin-right: 0.3rem;
 				width: auto;
 				border-radius: 1rem;
 			}
 
 			.details {
 				height: 20rem;
-				margin-left: .3rem;
-
+				margin-left: 0.5rem;
 				width: auto;
 				border: 1px solid white;
 				border-radius: 1rem;
@@ -53,7 +52,27 @@
 				display: block;
 				font-weight: lighter;
 				text-align: left;
+				position: relative;
+			}
+
+			.tab {
+				padding: 10px;
+				border: 1px solid white;
+
+				&::hover {
+					cursor: pointer;
+				}
 			}
 		}
 	}
+}
+
+.hidden {
+	opacity: 0;
+	transition: 0.5s;
+}
+
+.visible {
+	opacity: 1;
+	transition: 0.5s;
 }
