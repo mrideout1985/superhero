@@ -40,14 +40,20 @@ export const Search = () => {
 		let results = [];
 		if (heros !== undefined) {
 			if (Object.keys(props).length > 2) {
-				for (let i = 0; i < 20; i++) {
+				for (let i = 0; i < 5; i++) {
 					let entry = Object.values(props)[2];
 					results.push(entry[i]);
 				}
 			}
 			return results.map((el, key) => {
 				return (
-					<Link to={`/hero-info/${el?.id}`}>
+					<Link
+						onClick={() => {
+							setIsOpen(!isOpen);
+							setInput("");
+						}}
+						to={`/hero-info/${el?.id}`}
+					>
 						<li key={key}>
 							<img src={el?.image.url} />
 
