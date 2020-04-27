@@ -8,7 +8,7 @@ export default function Biography(props) {
 			style={{ position: "absolute", top: 0, left: 0 }}
 		>
 			<div>Full name: {props.biography?.["full-name"]}</div>
-			<div>Alias': {props.biography?.aliases}</div>
+			<div>Alias': {props.biography?.aliases.join(", ")}</div>
 			<div>Alignment: {props.biography?.alignment}</div>
 			<div>Alter-egos: {props.biography?.["alter-egos"]}</div>
 			<div>First appearance: {props.biography?.["first-appearance"]}</div>

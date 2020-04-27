@@ -18,19 +18,15 @@ export default function HeroInfo() {
 
 	return (
 		<div className={styles["hero-page"]}>
-			<div className={styles["header-container"]}>
+			<div className={styles["header-container"]}
+			style={{
+				backgroundImage: `url(${hero?.image?.url})`,
+				backgroundSize: '100%',
+				backgroundPosition: 'center',
+
+			}}>
 				<div className={styles["header"]}>
-					<div>
-						<img
-							src={
-								hero?.image?.url !== undefined
-									? hero?.image?.url
-									: "no img"
-							}
-							alt=""
-						/>
-					</div>
-					<div>
+				<div className={styles["tabs"]}>
 						<div
 							className={styles["tab"]}
 							onClick={() => {
@@ -39,7 +35,8 @@ export default function HeroInfo() {
 								setConnectionsActive(false);
 
 								setAppearActive(false);
-							}}
+							}} 
+							
 						>
 							BIO
 						</div>
@@ -77,7 +74,18 @@ export default function HeroInfo() {
 							CONNECTIONS
 						</div>
 					</div>
-					<div className={styles["details"]}>
+				<div className={styles["hero_image"]}>
+						<img
+							src={
+								hero?.image?.url !== undefined
+									? hero?.image?.url
+									: "no img"
+							}
+							alt=""
+						/>
+					</div>
+				<div className={styles["details"]}>
+
 						<PowerStats
 							className={
 								statsActive
@@ -85,6 +93,7 @@ export default function HeroInfo() {
 									: styles["hidden"]
 							}
 							powerStats={hero?.powerstats}
+							
 						/>
 						<Biography
 							className={
@@ -110,6 +119,9 @@ export default function HeroInfo() {
 							connections={hero?.connections}
 						/>
 					</div>
+				
+					
+				
 				</div>
 			</div>
 		</div>

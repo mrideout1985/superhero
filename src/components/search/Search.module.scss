@@ -1,6 +1,8 @@
 .form {
 	width: 100%;
 	z-index: 10;
+	font-family: monospace;
+
 
 	.search {
 		display: flex;
@@ -9,8 +11,9 @@
 		.input {
 			border-radius: 10px;
 			outline: transparent;
+			margin-top: .4rem;
 			border-radius: 3px;
-			width: 15rem;
+			width: 25rem;
 
 			// &:focus {
 			// 	// border: 1px solid #fff;

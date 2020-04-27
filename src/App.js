@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 import { Search } from './components/search/Search';
 import HeroInfo from "./components/HeroInfo/HeroInfo"
 import { Header } from './components/Header/Header';
+import "./sass/main.scss"
 
 function App() {
   return (

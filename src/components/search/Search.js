@@ -23,7 +23,7 @@ export const Search = () => {
 			setSearch(input);
 			console.log("debouncing");
 		},
-		100,
+		10,
 		[input]
 	);
 
