@@ -7,7 +7,6 @@ export default function PowerStats(props) {
 			className={[styles["powerstats"], [props.className]].join(" ")}
 			style={{ position: "absolute", top: 0, left: 0 }}
 		>
-			{console.log("Props: ", props)}
 			<div>Intelligence: {props.powerStats?.intelligence}</div>
 			<div>Strength: {props.powerStats?.strength}</div>
 			<div>Speed: {props.powerStats?.speed}</div>

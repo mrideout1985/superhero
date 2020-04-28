@@ -14,16 +14,14 @@ export const Search = () => {
 	const ref = useRef(null);
 
 	useClickAway(ref, () => {
-		console.log("OUTSIDE CLICKED");
 		setIsOpen(false);
 	});
 
 	const [] = useDebounce(
 		() => {
 			setSearch(input);
-			console.log("debouncing");
 		},
-		10,
+		100,
 		[input]
 	);
 
@@ -69,7 +67,6 @@ export const Search = () => {
 
 	return (
 		<form className={styles.form} onSubmit={handleSubmit}>
-			{console.log(heros)}
 			<div className={styles.search}>
 				<div className={styles.input}>
 					<input
