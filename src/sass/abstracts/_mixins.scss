@@ -1,0 +1,16 @@
+//media query manager
+/* 
+
+0-600 px phone
+600-900 - tablet portrait
+900-1200 - tablet landscape 
+1200-1800 - normal styles apply
+1800+ - big screen
+
+*/
+
+@mixin respond-phone {
+	@media (max-width: 600px) {
+		@content;
+	}
+}

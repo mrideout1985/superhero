@@ -1,0 +1,156 @@
+$color-primary: #7ed56f;
+$color-primary-dark: #28b485;
+
+$color-secondary: #ffb900;
+$color-secondary-dark: #ff7730;
+
+$color-tertiary: #2998ff;
+$color-tertiary-dark: #5643fa;
+
+.card {
+	perspective: 1500px;
+	-moz-perspective: 1500px;
+	position: relative;
+	height: 30rem;
+	width: 22rem;
+
+	&__side {
+		background-color: orangered;
+		color: white;
+		transition: all 0.8s ease;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 22rem;
+		backface-visibility: hidden;
+		height: 30rem;
+		border-radius: 10px;
+		overflow: hidden;
+		box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.486);
+
+		&--front {
+			background-color: white;
+		}
+
+		&--back {
+			transform: rotateY(180deg);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			&-1 {
+				background-image: linear-gradient(
+					to right bottom,
+					$color-secondary,
+					$color-secondary-dark
+				);
+			}
+		}
+	}
+
+	&:hover &__side--front {
+		transform: rotateY(-180deg);
+	}
+
+	&:hover &__side--back {
+		transform: rotateY(0);
+	}
+
+	//Front Side Styling
+
+	&__picture {
+		background-size: cover;
+		background-blend-mode: screen;
+		height: 30rem;
+		width: auto;
+	}
+
+	&__heading {
+		font-size: 2.1rem;
+		font-family: "Courier New", Courier, monospace;
+		font-weight: 300;
+		color: rgb(255, 255, 255);
+		position: absolute;
+		margin-top: 3rem;
+		top: 0.1px;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		text-align: center;
+		width: 75%;
+	}
+
+	&__heading-span {
+		padding: 5px 5px;
+		-webkit-box-decoration-break: clone;
+		box-decoration-break: clone;
+		&--1 {
+			background-image: linear-gradient(
+				to right bottom,
+				rgba(rgb(54, 51, 51), 0.85),
+				rgba(black, 0.85)
+			);
+		}
+	}
+
+	&__details {
+		padding: 3em;
+
+		ul {
+			list-style: none;
+			color: black;
+			margin: 0 auto;
+
+			li {
+				font-size: 1rem;
+				padding: 1.4rem;
+
+				&:not(:last-child) {
+					border-bottom: 1px solid grey;
+				}
+			}
+		}
+	}
+
+	&__cta {
+		width: 22rem;
+		height: 30rem;
+		background-color: salmon;
+		display: flex;
+		justify-content: center;
+	}
+
+	&__hero-stats {
+		display: flex;
+		width: 22rem;
+		height: 30rem;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+	&__btn {
+		background-color: white;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: black;
+		border-radius: 20px;
+		text-decoration: none;
+		text-align: center;
+		font-size: 1rem;
+		width: 7rem;
+		height: 3rem;
+		margin: 1rem;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	&__price-only {
+		font-size: 1.4rem;
+		text-transform: uppercase;
+	}
+
+	&__price-value {
+		font-size: 6rem;
+		font-weight: 100;
+	}
+}
