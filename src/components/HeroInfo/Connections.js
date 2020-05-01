@@ -7,10 +7,7 @@ export default function Connections(props) {
 			className={(styles["connections"], [props.className].join(" "))}
 			style={{ position: "absolute", top: 0, left: 0 }}
 		>
-			<div>
-				Affiliated with: {console.log(props)}
-				{props.connections?.["group-affiliation"]}
-			</div>
+			<div>{props.connections?.["group-affiliation"]}</div>
 			<div>Relatives': {props.connections?.relatives}</div>
 		</div>
 	);

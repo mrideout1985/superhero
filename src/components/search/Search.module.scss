@@ -3,7 +3,6 @@
 	z-index: 10;
 	font-family: monospace;
 
-
 	.search {
 		display: flex;
 		justify-content: center;
@@ -11,7 +10,7 @@
 		.input {
 			border-radius: 10px;
 			outline: transparent;
-			margin-top: .4rem;
+			margin-top: 0.4rem;
 			border-radius: 3px;
 			width: 25rem;
 
@@ -41,14 +40,18 @@ ul {
 
 	li {
 		display: flex;
-		border-top: 0.2rem solid #111314;
-		border-right: 0.2rem solid #111314;
-		border-left: 0.2rem solid #111314;
 		padding: 0.8rem;
 		background-color: #0b0e0f;
 
 		&:hover {
 			background-color: #262829;
+		}
+
+		&:not(:last-child) {
+			/* selects everything excpet the last chld */
+			border-top: 0.2rem solid #111314;
+			border-right: 0.2rem solid #111314;
+			border-left: 0.2rem solid #111314;
 		}
 
 		img {

@@ -13,6 +13,7 @@ $color-tertiary-dark: #5643fa;
 	position: relative;
 	height: 30rem;
 	width: 22rem;
+	margin-top: 2rem;
 
 	&__side {
 		background-color: orangered;
@@ -113,7 +114,15 @@ $color-tertiary-dark: #5643fa;
 	&__cta {
 		width: 22rem;
 		height: 30rem;
-		background-color: salmon;
+		background: rgb(78, 78, 96);
+		background: rgb(78, 78, 96);
+		background: linear-gradient(
+			274deg,
+			rgba(78, 78, 96, 1) 0%,
+			rgba(122, 110, 110, 1) 41%,
+			rgba(213, 212, 212, 1) 100%
+		);
+
 		display: flex;
 		justify-content: center;
 	}
@@ -132,6 +141,7 @@ $color-tertiary-dark: #5643fa;
 		align-items: center;
 		justify-content: center;
 		color: black;
+		border: 1px solid black;
 		border-radius: 20px;
 		text-decoration: none;
 		text-align: center;
@@ -139,9 +149,17 @@ $color-tertiary-dark: #5643fa;
 		width: 7rem;
 		height: 3rem;
 		margin: 1rem;
+		transition: all 0.2s;
 
 		&:hover {
 			cursor: pointer;
+			transform: translateY(-2px);
+			box-shadow: 0 10px 5px rgba(3, 4, 5, 0.253);
+		}
+
+		&:active {
+			transform: translateY(1px);
+			box-shadow: 0 10px 5px rgba(3, 4, 5, 0.5);
 		}
 	}
 	&__price-only {
